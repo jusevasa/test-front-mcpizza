@@ -1,0 +1,14 @@
+/*Colors*/
+@import './colors.scss';
+
+/* Layout*/
+@import '../../app/shared/components/Layout/Layout.scss';
+
+/*Components*/
+@import '../../app/shared/components/ImageContainer/ImageContainer.scss';
+@import '../../app/feature/Home/components/Login/Login.scss';
+@import '../../app/feature/Home/components/Form/Form.scss';
+@import '../../app/feature/Home/components/Store/Store.scss';
+@import '../../app/feature/Home/components/CardStore/CardStore.scss';
+@import '../../app/feature/Home/components/Footer/Footer.scss';
+@import '../../app/feature/Home/components/Header/Header.scss';

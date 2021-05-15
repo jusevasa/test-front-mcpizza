@@ -1,0 +1,50 @@
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+
+  @media (min-width: 920px) {
+    width: 50vw;
+    position: relative;
+    height: 100vh;
+  }
+
+  img {
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: auto;
+    top: 2%;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    animation: spin 50000ms linear infinite;
+
+    @media (min-width: 350px) and (max-width: 920px) {
+      max-width: 600px;
+      max-height: 600px;
+      width: 50%;
+      height: auto;
+    }
+
+    @media (min-width: 920px) {
+      width: 600px;
+      height: 600px;
+      margin: auto;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
