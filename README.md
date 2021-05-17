@@ -8,6 +8,8 @@ Aplicacion creada haciendo uso de la librearia react js, el **demo** la aplicaci
 
 __https://test-front-mcpizza.vercel.app/__
 
+la aplicacion cuenta con una adaptacion full responsive, utilizando mobile first para su creacion.
+
 ## Folder Schema
 
 * public
