@@ -7,7 +7,6 @@ const ContextAuthProvider = ({ children }) => {
     return localStorage.getItem('loggedUser');
   });
 
-  console.log(isAuth);
   const value = {
     isAuth,
     activateAuth: (isUser) => {

@@ -4,13 +4,25 @@ import React, { useEffect, useState } from 'react';
 import CardStore from '../CardStore';
 import Footer from '../Footer';
 import Header from '../Header';
+import ModalRestaurant from '../ModalRestaurant';
 
 const Store = ({ stores = {}, removeAuth }) => {
   const [search, setSearch] = useState('');
   const [filterdData, setFilterdData] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [selectStore, setSelectStore] = useState();
 
   const handleInputChange = (e) => {
     setSearch(e.target.value);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const handleOnClickStore = (store) => {
+    setSelectStore(store);
+    setShowModal(true);
   };
 
   useEffect(() => {
@@ -27,7 +39,7 @@ const Store = ({ stores = {}, removeAuth }) => {
   return (
     <>
       <div className='store-container showing'>
-        <Header removeAuth={removeAuth}/>
+        <Header removeAuth={removeAuth} />
         <section className='main-section'>
           <div className='category-section'>
             <ul>
@@ -48,7 +60,13 @@ const Store = ({ stores = {}, removeAuth }) => {
         </section>
         <div className='restaurant-list'>
           {filterdData.length > 0 ? (
-            filterdData.map((store) => <CardStore {...store} key={store.id} />)
+            filterdData.map((store) => (
+              <CardStore
+                {...store}
+                key={store.id}
+                handleClick={() => handleOnClickStore(store)}
+              />
+            ))
           ) : (
             <div className='no-result-container'>
               <p> No se encontraron resultados</p>
@@ -56,6 +74,9 @@ const Store = ({ stores = {}, removeAuth }) => {
             </div>
           )}
         </div>
+        {showModal && (
+          <ModalRestaurant store={selectStore} onClose={handleClose} />
+        )}
         <Footer />
       </div>
     </>
