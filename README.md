@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Front Test RobinFood
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![](https://media.giphy.com/media/KWcqgJRfP9ILiWbb7X/giphy.gif)
+![](https://media.giphy.com/media/EiIBvPB4JLIjhecLzp/giphy.gif)
 
-In the project directory, you can run:
+Aplicacion creada haciendo uso de la librearia react js, el **demo** la aplicacion lo podran encontrar en el siguiente enlace: 
 
-### `npm start`
+__https://test-front-mcpizza.vercel.app/__
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Folder Schema
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* public
+* src
+* app (Aqui va a vivir toda nuestra aplicación).
+  * core (Aqui va a vivir configuraciones necesarias para usar consultas a una API, manejo de la arquitectura de Redux)
 
-### `npm test`
+  * feature ( aqui estan nuestros componentes con su logica y estructura, dependiendo de su funcion el va a tener un nombre. Ejemplo: Cliente, Producto, etc ... )
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    * components ( aqui estan cada una de las implementaciones que hacemos. Ejemplo: listar, insertar, eliminar, etc... y en general tiene un Router )
 
-### `npm run build`
+  * shared ( aqui estan todos los componentes que se van a reutilizar, los hooks y utils para reutilizar funciones )
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    * components ( componentes reutilizables, como Button, Headers y Layouts. Estos dentro tienen index.tsx y un style.ts )
+    * hooks ( custom hooks creados por nosotros)
+    * utils ( funciones reutilizables )
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Inicialización del proyecto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+El proyecto maneja el paquete **npm**, por lo que primer es debido realizar la instalación de dependencias con el comando:
 
-### `npm run eject`
+```javascript
+npm i
+```
+Una vez realizada la instalación de las dependencias, ya puede hacer uso de los scripts ya preparados.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Iniciar la aplicación localmente
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Usted debe utilizar el comando:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para que la aplicacion se ejecute en el puerto **http://localhost:3000/**
 
-## Learn More
+## Realización de testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La aplicación cuenta con pruebas unitarias, las cuales aportan a la funcionalidad del código. Para la ejecución de estas deberá utilizar el comando:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+npm run test
+```
 
-### Code Splitting
+Y automáticamente se ejecutaran las respectivas pruebas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Dependencias utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Estas fueron las aplicaciones utilizadas para dar finalidad al proyecto:
 
-### Making a Progressive Web App
+Nombre Dependencia | Descripción
+------------ | -------------
+sass | Pre-processador de css
+boostrap | framework de css
+react-dom | configuracion de routing de la aplicacion
+react-dom | configuracion de routing de la aplicacion
+react-icons | extraccion de componentes en iconos
+sweetalert2 | creacion de alertas
+testing-library | creacion de testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
